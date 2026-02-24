@@ -1,4 +1,5 @@
 import "@/assets/styles/globals.css";
+import { Constants } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -7,8 +8,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NextStore ⏭️",
-  description: "NextStore Build with lot of 🥰💘💖💓",
+  title: {
+    template: `%s | ${Constants.APP_NAME}`,
+    default: Constants.APP_NAME,
+  },
+  description: Constants.APP_DESCRIPTION,
+  metadataBase: Constants.SERVER_URL,
 };
 
 export default function RootLayout({
